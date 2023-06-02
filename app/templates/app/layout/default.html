@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include app/partials/header %}
+{% include 'app/partials/head.html' %}
 <body class="animsition">
     <div class="page-wrapper">
-        {% include app/partials/nav.html %}
+        {% include 'app/partials/nav.html' %}
 
-        {% include app/partials/sidebar.html %}
+        {% include 'app/partials/sidebar.html' %}
 
         {% block content %}{% endblock content %}
 
