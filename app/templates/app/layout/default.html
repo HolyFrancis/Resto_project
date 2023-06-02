@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include app/partials/header %}
+<body class="animsition">
+    <div class="page-wrapper">
+        {% include app/partials/nav.html %}
+
+        {% include app/partials/sidebar.html %}
+
+        {% block content %}{% endblock content %}
+
+        {% load static %}
+        <!-- Jquery JS-->
+        <script src="{% static 'app/vendor/jquery-3.2.1.min.js'%}"></script>
+        <!-- Bootstrap JS-->
+        <script src="{% static 'app/vendor/bootstrap-4.1/popper.min.js'%}"></script>
+        <script src="{% static 'app/vendor/bootstrap-4.1/bootstrap.min.js'%}"></script>
+        <!-- Vendor JS       -->
+        <script src="{% static 'app/vendor/slick/slick.min.js'%}">
+        </script>
+        <script src="{% static 'app/vendor/wow/wow.min.js'%}"></script>
+        <script src="{% static 'app/vendor/animsition/animsition.min.js'%}"></script>
+        <script src="{% static 'app/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js'%}">
+        </script>
+        <script src="{% static 'app/vendor/counter-up/jquery.waypoints.min.js'%}"></script>
+        <script src="{% static 'app/vendor/counter-up/jquery.counterup.min.js'%}">
+        </script>
+        <script src="{% static 'app/vendor/circle-progress/circle-progress.min.js'%}"></script>
+        <script src="{% static 'app/vendor/perfect-scrollbar/perfect-scrollbar.js'%}"></script>
+        <script src="{% static 'app/vendor/chartjs/Chart.bundle.min.js'%}"></script>
+        <script src="{% static 'app/vendor/select2/select2.min.js'%}">
+        </script>
+
+        <!-- Main JS-->
+        <script src="{% static 'app/js/main.js'%}"></script>
+    </div>
+</body>
+
+</html>
+<!-- end document-->
