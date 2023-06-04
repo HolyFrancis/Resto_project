@@ -10,7 +10,7 @@ def registerPage(request):
     if request.method=='POST':
        form= UserRegisterForm(request.POST)
        if form.is_valid():
-           form.save() 
+           form.save()
     context={'form':form}
-    return render(request, 'app/accounts/register.html',context)
+    return render(request, 'app/account/register.html',context)
     
