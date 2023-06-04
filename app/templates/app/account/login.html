@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static'app/css/styles.css'%}">
+    <style>
+        body{
+            margin:0%;
+            padding:0%;
+            background-image:url("images/leaves.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            width: 400px;
+            height: 380px;
+            margin: 150px 40%;
+            background-color: #333;
+        }
+        .form-group{
+            width: 370px;
+        }
+        .form-group p{
+            color: #fff;
+        }
+        a{
+            text-decoration:none;
+        } 
+        label{
+            color: #fff;
+
+        }
+        .title h2, h3{
+            color:#fff;
+            font-family:verdana;
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="container">
+            <div class="title">
+                <h2>Connectez-vous ici</h1>
+                <h3>D_holy Quiz</h2>
+            </div>
+            
+            <form action="" method="POST" autocomplete="off">
+                {% csrf_token %}
+                    <div class="login-form">
+                        <div class="form-group">
+                            <label for='adress'>Your username :</label>
+                            <input type='text' class="form-control" id='adress' name='username' placeholder='saisissez votre adresse email'>
+                        </div><br>
+                        <div class="form-group">
+                            <label for='pass'>Your password :</label>
+                            <input type='text' class="form-control" id='pass' name='password' placeholder='saisissez mot de passe'>
+                        </div><br>
+                        <div class="form-group">
+                            <input type='submit' class="btn btn-primary" value='Se connecter' name="btn-connect">
+                        </div><br>
+                        {% for message in messages %}
+                            <p id="messages">{{message}}</p>
+                        {% endfor %}
+                        <div class="form-group">
+                            <p>N'avez-vous pas de compte?<a href="index.php"> enregistrez-vous </a>ici</p>
+                        </div>
+                    </div>
+                
+            </form>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
