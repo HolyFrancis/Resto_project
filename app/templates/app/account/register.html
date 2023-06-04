@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious-Resto</title>
+    {% load static %}
+    <link href="{% static 'app/css/styles.css'%}" rel="stylesheet"/>
+    <style>
+        body{
+            background-color: green
+            background-position:center ;
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+        .container{
+            display:flex;
+        }
+        .left{
+            width:550px;
+        }
+        .right{
+            width:500px;
+            margin: 130px 30px 200px 0px;
+        }
+        .titre h1{
+            margin-left: 80px;
+            font-size:60px;
+        }
+        .register-form{
+            width:350px;
+            height: 580px;
+            background-color: rgba(58, 57, 58, 0.6);
+            border-radius: 15px;
+            margin: 25px 20px;
+            padding-left: 10px;
+            padding-right:10px;
+        }
+        .register-form h1{
+            color:#fff;
+            font-family: Georgia;
+        }
+        
+        .form-group p{
+            color:#fff;
+        }
+        form label{
+            color: #fff;
+        }
+        h1{
+            font-size:30px;
+            
+            color: rgb(231, 144, 31);
+        }
+        .article P{
+            color: rgb(245, 200, 78);
+        }
+        a{
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="register-form">
+                <h1>
+                    creation du compte
+                </h1>
+                <form method=POST action='' autocomplete="off">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="form-label">Username:</label>
+                        {{form.username}}
+                    </div>
+                   
+    
+                    <div class="form-group">
+                        <label>Email adress:</label>
+                        {{form.email}}
+                    </div>
+                    <div class="form-group">
+                        <label>Password:</label>
+                        {{form.password1}}
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Password confirm</label>
+                        {{form.password2}}
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type='submit' class="btn btn-primary" name='save' value="S'enregistrer">
+                    </div>
+                    {{form.errors}}
+                    <div class="form-group">
+                        <p>Avez-vous déjà un compte? <a href="#">connectez-vous</a>
+                        ou bien <a href="#">se connecter en tant que administrateur</a></p>
+                    </div>    
+                </form>    
+            </div>
+        </div>
+        
+    </div>
+    
+    
+
+</body>
+</html>
